@@ -1,0 +1,240 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.13 0.021 285);
+  --foreground: oklch(0.97 0.005 250);
+  --card: oklch(0.18 0.026 285);
+  --card-foreground: oklch(0.97 0.005 250);
+  --popover: oklch(0.18 0.026 285);
+  --popover-foreground: oklch(0.97 0.005 250);
+  --primary: oklch(0.62 0.14 163);
+  --primary-foreground: oklch(0.14 0.02 285);
+  --secondary: oklch(0.24 0.035 285);
+  --secondary-foreground: oklch(0.97 0.005 250);
+  --muted: oklch(0.24 0.035 285);
+  --muted-foreground: oklch(0.7 0.02 265);
+  --accent: oklch(0.26 0.05 300);
+  --accent-foreground: oklch(0.97 0.005 250);
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.98 0.003 248);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.62 0.14 163);
+  --chart-1: oklch(0.62 0.14 163);
+  --chart-2: oklch(0.6 0.16 300);
+  --chart-3: oklch(0.65 0.17 250);
+  --chart-4: oklch(0.75 0.16 85);
+  --chart-5: oklch(0.65 0.2 20);
+  --sidebar: oklch(0.16 0.024 285);
+  --sidebar-foreground: oklch(0.97 0.005 250);
+  --sidebar-primary: oklch(0.62 0.14 163);
+  --sidebar-primary-foreground: oklch(0.14 0.02 285);
+  --sidebar-accent: oklch(0.24 0.035 285);
+  --sidebar-accent-foreground: oklch(0.97 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.62 0.14 163);
+}
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/*
+ * Al-Wansa chat themes (Task 3.2)
+ * The chat UI uses fixed palette utilities; these scoped overrides remap them
+ * to the active theme's CSS variables set on .wansa-root.
+ */
+.wansa-root {
+  --w-bg: #0a0a12;
+  --w-panel: #12121e;
+  --w-elev: #1a1a2e;
+  --w-accent: #059669;
+  --w-accent-soft: #34d399;
+  --w-wall: none;
+}
+
+.wansa-root,
+.wansa-root .bg-\[\#0a0a12\] {
+  background-color: var(--w-bg);
+}
+
+.wansa-root .bg-\[\#12121e\] {
+  background-color: var(--w-panel);
+}
+
+.wansa-root .bg-\[\#1a1a2e\],
+.wansa-root .bg-\[\#141426\] {
+  background-color: var(--w-elev);
+}
+
+.wansa-root .bg-emerald-600,
+.wansa-root .bg-emerald-500 {
+  background-color: var(--w-accent);
+}
+
+.wansa-root .text-emerald-400,
+.wansa-root .text-emerald-300,
+.wansa-root .text-emerald-500 {
+  color: var(--w-accent-soft);
+}
+
+.wansa-root .wansa-wallpaper {
+  background-image: var(--w-wall);
+}
+
+/*
+ * Anime & Manga section (scoped design tokens per spec)
+ */
+.library-root {
+  --l-bg: #0a0a0f;
+  --l-card: #14141a;
+  --l-border: #2a2a3a;
+  --l-primary: #e94560;
+  --l-secondary: #00d9ff;
+  --l-fg: #f3f4f8;
+  --l-muted: #8b8ca3;
+  background-color: var(--l-bg);
+  font-family: "Cairo", ui-sans-serif, system-ui, sans-serif;
+}
+
+.l-lift {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.l-lift:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in oklab, var(--l-primary) 50%, var(--l-border));
+  box-shadow: 0 16px 32px -14px color-mix(in oklab, var(--l-primary) 45%, transparent);
+}
+
+.l-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.l-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  animation: l-shimmer 1.4s infinite;
+}
+@keyframes l-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
